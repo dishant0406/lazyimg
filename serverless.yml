@@ -1,0 +1,19 @@
+service: imgly
+frameworkVersion: '3'
+
+provider:
+  name: cloudflare
+  config:
+    accountId: 9c031210dc4997ab09bd6324dc31b678
+    zoneId: 639837847e35008fd3151762a0953fd9
+
+	
+plugins:
+  - serverless-cloudflare-workers
+
+functions:
+  server:
+    name: imgly
+    script: src/index
+    events:
+      - httpApi: '*'
