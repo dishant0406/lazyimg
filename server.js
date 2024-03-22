@@ -33,7 +33,6 @@ app.get('/remove', async (req, res) => {
   }
 });
 
-
 app.use((req, res) => {
   res.status(404).send('404 Not Found');
 });
