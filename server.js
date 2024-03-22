@@ -2,6 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { removeBg, removeBgFromUrl } from './src/index.js';
 import multer from 'multer';
+import { config } from 'dotenv';
+
+config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -37,6 +40,8 @@ app.use((req, res) => {
   res.status(404).send('404 Not Found');
 });
 
-app.listen(4000, () => {
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
   console.log('Server is running on port 3000');
 })
