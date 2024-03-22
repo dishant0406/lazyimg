@@ -16,6 +16,6 @@ WORKDIR /app
 COPY --from=builder /app ./
 
 # Your app binds to port 4000 so you'll use the EXPOSE instruction to have it mapped by the docker daemon
-EXPOSE 8000
+EXPOSE 4000
 
 CMD ["node", "server.js"]
